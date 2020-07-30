@@ -73,7 +73,7 @@ plot.D <- function(data)
 #' @export plot.E
 plot.E <- function(data)
 {
-  ggplot(data, (aes(x = Day, y = AFDMrem, colour = Replicate))) +
+  ggplot(data, (aes(x = Day, y = AFDMrem))) +
     geom_point() +
     geom_smooth(method = "lm", se = FALSE) +
     facet_wrap(~ Treatment + Replicate)
