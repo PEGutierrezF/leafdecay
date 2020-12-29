@@ -24,5 +24,5 @@ rsquared.k<- function(data, Treatment, Replicate, Day, Ln.AFDMrem){
     nest_by({{Treatment}}, {{Replicate}}) %>%
     mutate(model = list(lm(reformulate(day_col, ln_col), data = data))) %>%
     summarise(glance_out = list(glance(model)), .groups = 'drop') %>%
-    unnest(glance_out)%>% print(n = Inf) # Calculate the r-squared and p-value
+    unnest(glance_out)
 }
