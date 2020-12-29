@@ -17,14 +17,12 @@
 #' @examples slope.K <- function(data,Treatment,Replicate,Day,Ln.AFDMrem)
 #'
 #' @export slope
-slope.k <- function(data,
-Treatment,
-Replicate,
-Day,
-Ln.AFDMrem){
-  fitted_models <- data  %>% group_by(Treatment, Replicate) %>%
-    do(model = lm(Ln.AFDMrem ~ Day, data = .))
-
-  broom::tidy(fitted_models,model) %>% print(n = Inf) # Calculate the slope and estimate
-
+slope.k <- function(data, Treatment, Replicate, Day, Ln.AFDMrem){
+  ln_col <- rlang::as_string(ensym(Ln.AFDMrem))
+  day_col <- rlang::as_string(ensym(Day))
+  data %>%
+    nest_by({{Treatment}}, {{Replicate}}) %>%
+    mutate(model = list(lm(reformulate(day_col, ln_col), data = data))) %>%
+    summarise(tidy_out = list(tidy(model)), .groups = 'drop') %>%
+    unnest(tidy_out)
 }
