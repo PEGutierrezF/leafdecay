@@ -15,7 +15,7 @@
 #' @examples manipulation(data,InitialWt,FinalWt,Treatment)
 #'
 #' @export manipulation
-manipulation <- function(data,InitialWt,FinalWt,Treatment) {
+manipulation <- function(data,InitialWt,FinalWt,Treatment,...) {
   control <- data %>%
     dplyr::filter(Treatment == "Control") %>%
     dplyr::select({{InitialWt}},{{FinalWt}}) %>%

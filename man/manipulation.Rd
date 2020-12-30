@@ -4,7 +4,7 @@
 \alias{manipulation}
 \title{Leaf Litter Decomposition Analysis for Stream Ecosystems}
 \usage{
-manipulation(data, InitialWt, FinalWt, Treatment)
+manipulation(data, InitialWt, FinalWt, Treatment, ...)
 }
 \arguments{
 \item{data}{}
