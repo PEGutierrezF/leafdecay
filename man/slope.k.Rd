@@ -21,6 +21,6 @@ slope.k(data, Treatment, Replicate, Day, Ln.AFDMrem)
 Calculate slope
 }
 \examples{
-slope.K <- function(data,Treatment,Replicate,Day,Ln.AFDMrem)
+slope.K(data,Treatment,Replicate,Day,Ln.AFDMrem)
 
 }
