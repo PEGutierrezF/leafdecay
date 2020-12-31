@@ -19,7 +19,7 @@
 #' @export plot.A
 plot.A <- function(data)
 {
-  data%>% # the names of the new data frame and the data frame to be summarised
+  data%>% # the names of the new data frame and the data frame to be summarized
     group_by(Treatment, Day) %>%   # the grouping variable
     dplyr::summarise(mean = mean(AFDMrem),  # calculates the mean of each group
                      sd = sd(AFDMrem), # calculates the standard deviation of each group
