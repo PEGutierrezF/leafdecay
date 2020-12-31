@@ -14,7 +14,7 @@
 #'
 #' @return NULL
 #'
-#' @examples slope.K <- function(data,Treatment,Replicate,Day,Ln.AFDMrem)
+#' @examples slope.K(data,Treatment,Replicate,Day,Ln.AFDMrem)
 #'
 #' @export slope
 slope.k <- function(data, Treatment, Replicate, Day, Ln.AFDMrem){
